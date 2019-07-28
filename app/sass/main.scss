@@ -1,0 +1,24 @@
+@import 'helpers/helpers', 'lib/libs', 'components/components', 'partials/partials';
+
+/*!   === Custom Font's  ===   */
+// @include font-face('StarJedi', '../fonts/StarJedi/StarJedi');
+
+@include placeholder {
+	// color: $black;
+}
+
+@include selection {
+	// color: $white;
+	// background-color: $orange;
+}
+
+/*!   === Main CSS ===   */
+body {
+	color: $black;
+	font-weight: $fw-400;
+	font-size: $ftz-normal;
+	background-color: $white; // 2
+}
+
+//  Pages
+@import 'index.scss';
