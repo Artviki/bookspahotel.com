@@ -1,7 +1,13 @@
 // Variables
 
 // Font Families
-$default-font: 'StarJedi';
+$default-font: 'ProximaNova-Regular';
+$default-font-thin: 'ProximaNova-Thin';
+$default-font-light: 'ProximaNova-Light';
+$default-font-semibold: 'ProximaNova-SemiBold';
+$default-font-bold: 'ProximaNova-Bold';
+$default-font-extrabold: 'ProximaNova-ExtraBold';
+$default-font-black: 'ProximaNova-Black';
 
 // Font Sizes
 $ftz-mini: 10px;
@@ -26,6 +32,7 @@ $lh-heading: 1.2;
 // Colors
 $white: #fff;
 $black: #000;
+$blue: #2a99cf;
 $orange: #ffa500;
 
 // Utilities

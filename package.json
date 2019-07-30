@@ -44,10 +44,10 @@
 		"node": ">=10.16.0 "
 	},
 	"scripts": {
-		"dev": "gulp",
+		"start": "gulp",
 		"watch": "gulp watch",
 		"build": "gulp build",
-		"start": "yarn && node init.js"
+		"init": "yarn && node init.js"
 	},
 	"dependencies": {
 		"@babel/core": "^7.5.5",

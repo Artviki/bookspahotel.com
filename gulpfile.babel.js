@@ -314,9 +314,9 @@ export const css = () => {
       .src(paths.app.styles.main)
       .pipe($.plumber())
       .pipe($.sass({ outputStyle: 'compressed' }))
-      .pipe($.purifycss(purifyContent)) // (Optional) disable if you don't want to cut unused CSS.
-      .pipe($.postcss(plugins)) // (Optional) disable if you don't want to use PostCSS plugins.
-      .pipe($.csso())
+      // .pipe($.purifycss(purifyContent)) // (Optional) disable if you don't want to cut unused CSS.
+      // .pipe($.postcss(plugins)) // (Optional) disable if you don't want to use PostCSS plugins.
+      // .pipe($.csso())
       .pipe($.rename({ suffix: '.min' }))
   //  .pipe($.stylelint(styleLintSetting)) // (Optional) enable if you need to lint final CSS file.
       .pipe(gulp.dest(paths.dist.css))

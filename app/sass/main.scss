@@ -1,7 +1,13 @@
 @import 'helpers/helpers', 'lib/libs', 'components/components', 'partials/partials';
 
 /*!   === Custom Font's  ===   */
-// @include font-face('StarJedi', '../fonts/StarJedi/StarJedi');
+@include font-face('ProximaNova-Thin', '../fonts/ProximaNova/ProximaNova-Thin');
+@include font-face('ProximaNova-Light', '../fonts/ProximaNova/ProximaNova-Light');
+@include font-face('ProximaNova-Regular', '../fonts/ProximaNova/ProximaNova-Regular');
+@include font-face('ProximaNova-SemiBold', '../fonts/ProximaNova/ProximaNova-SemiBold');
+@include font-face('ProximaNova-Bold', '../fonts/ProximaNova/ProximaNova-Bold');
+@include font-face('ProximaNova-ExtraBold', '../fonts/ProximaNova/ProximaNova-ExtraBold');
+@include font-face('ProximaNova-Black', '../fonts/ProximaNova/ProximaNova-Black');
 
 @include placeholder {
 	// color: $black;
