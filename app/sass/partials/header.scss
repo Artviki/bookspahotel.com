@@ -37,30 +37,53 @@
 		justify-content: space-between;
 		list-style: none;
 		padding: 15px 0;
+
+		.list-item {
+			&:not(:last-child) {
+				color: red;
+				margin-right: 15px;
+				position: relative;
+				&::after {
+					right: 0;
+					content: '';
+					position: absolute;
+					top: 50%;
+					transform: translate(0, -50%);
+					height: 13px;
+					width: 1px;
+					background-color: #d4d8db;
+				}
+			}
+			a {
+				display: inline-block;
+				padding: 5px 12px;
+				color: #0a0a0a;
+				font-size: $ftz-small;
+			}
+		}
+
 		.list-logo {
 			margin-right: auto;
 		}
 		.list-telephone {
 			margin-left: auto;
-		}
-		.list-item {
-			&:not(:last-child) {
-				margin-right: 15px;
-				&::after {
-					content: '|';
-					display: inline-block;
-					margin-left: 15px;
+			a {
+				display: flex;
+				align-items: center;
+				color: #0a0a0a;
+				font-size: $ftz-extra-large;
+				i {
+					font-size: $ftz-large;
+					width: 35px;
+					height: 35px;
+					color: #9aba22;
+					margin-right: 10px;
+					border-radius: 100%;
+					border: 2px solid #9aba22;
+					text-align: center;
+					line-height: 33px;
 				}
 			}
-		}
-		.logo {
-			width: 265px;
-			height: 36px;
-		}
-		a {
-			display: inline-block;
-			color: $black;
-			font-size: $ftz-small;
 		}
 	}
 }

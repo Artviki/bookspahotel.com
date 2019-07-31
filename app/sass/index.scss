@@ -1,4 +1,34 @@
 /*!   === Index ===   */
 
 .index {
+	.consulting-form {
+		text-align: center;
+		background-color: $blue;
+		padding: 15px 0;
+		&-content {
+			padding: 0 130px;
+		}
+		h1,
+		p {
+			font-weight: 300;
+			color: $white;
+		}
+		h1 {
+			font-size: 30px;
+			margin-bottom: 10px;
+		}
+		p {
+			font-size: $ftz-normal;
+			margin-bottom: 15px;
+		}
+		button {
+			padding: 12px 65px;
+			border-radius: 3px;
+			font-size: $ftz-large;
+			text-transform: capitalize;
+			font-weight: 300;
+			color: $blue;
+			background-color: #f2fbff;
+		}
+	}
 }

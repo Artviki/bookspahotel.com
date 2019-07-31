@@ -26,5 +26,10 @@ body {
 	background-color: $white; // 2
 }
 
+.logo {
+	width: 265px;
+	height: 36px;
+}
+
 //  Pages
 @import 'index.scss';

@@ -1,0 +1,15 @@
+/*!   === Banner ===   */
+
+.banner {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(../img/banner.jpg);
+	h1.banner-title {
+		// padding: 100px 0 70px;
+		padding: 100px 0 320px;
+		font-size: 48px;
+		font-weight: 600;
+		color: $white;
+	}
+}
