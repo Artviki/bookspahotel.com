@@ -10,8 +10,13 @@
 		list-style: none;
 		margin-left: auto;
 		padding: 5px 0;
-		li:not(:last-child) {
-			margin-right: 40px;
+		li {
+			&:first-child {
+				font-family: $number-font;
+			}
+			&:not(:last-child) {
+				margin-right: 40px;
+			}
 		}
 		a {
 			display: flex;
@@ -72,16 +77,9 @@
 				align-items: center;
 				color: #0a0a0a;
 				font-size: $ftz-extra-large;
-				i {
-					font-size: $ftz-large;
-					width: 35px;
-					height: 35px;
-					color: #9aba22;
+				font-family: $number-font;
+				svg {
 					margin-right: 10px;
-					border-radius: 100%;
-					border: 2px solid #9aba22;
-					text-align: center;
-					line-height: 33px;
 				}
 			}
 		}
