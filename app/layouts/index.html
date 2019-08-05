@@ -2,30 +2,65 @@
 <!-- Index -->
 <section class="index">
   <section class="international-contacts">
-    <div class="icon"></div>
-    <div>
-      Бесплатно по РФ
-      <br>
-      8 (800) 302 10 09
+    <div class="container">
+      <div class="section-flex">
+        <i class="section-icon"></i>
+        <address class="contact-item">
+          <span>Бесплатно по РФ</span>
+          <a href="tel:88003021009" title="Бесплатно по РФ">8 (800) 302 10 09</a>
+        </address>
+        <address class="contact-item">
+          <span>Бесплатно по Украине</span>
+          <a href="tel:0800211596" title="Бесплатно по Украине">0 (800) 211 596</a>
+        </address>
+        <address class="contact-item">
+          <span>Международный телефон</span>
+          <a href="tel:+420228882109" title="Международный телефон">(+420) 228 882 109</a>
+        </address>
+        <address class="contact-item">
+          <ul class="social-numbers">
+            <li class="icon"><a class="icon icon--whatsapp" href="https://wa.me/420731500797" title="WhatsApp" target="_blank" rel="noopener"></a></li>
+            <li class="icon"><a class="icon icon--telegram" href="https://t.me/bookspahotel" title="Telegram" target="_blank" rel="noopener"></a></li>
+            <li class="icon"><a class="icon icon--viber" href="https://viber.me/bookspahotel" title="Viber" target="_blank" rel="noopener"></a></li>
+          </ul>
+          <a href="tel:+420731500797" title="Mobile Number">+420 731 500 797</a>
+        </address>
+      </div>
     </div>
-    <div>
-      Бесплатно по Украине
-      <br>
-      0 (800) 211 596
-    </div>
-    <div>
-      Международный телефон
-      <br>
-      (+420) 228 882 109
-    </div>
-    <div>
-      <ul class="social-numbers">
-        <li><a class="icon-" href="" title="" target="_blank" rel="noopener"></a></li>
-        <li><a class="icon-" href="" title="" target="_blank" rel="noopener"></a></li>
-        <li><a class="icon-" href="" title="" target="_blank" rel="noopener"></a></li>
+  </section>
+  <section class="spa-hotels">
+    <div class="container">
+      <h1>Выберите курорт по медицинскому профилю</h1>
+      <ul class="filter-controllers">
+        <li class="filter-btn active" data-filter="*"><button>Желудочно-кишечный тракт</button></li>
+        <li class="filter-btn" data-filter=".opinion"><button>Опорно-двигательный аппарат</button></li>
+        <li class="filter-btn" data-filter=".research"><button>Сердечно-сосудистая система</button></li>
+        <li class="filter-btn" data-filter=".society"><button>Урологические заболевания</button></li>
+        <li class="filter-btn" data-filter=".economy"><button>Гинекологические заболевания</button></li>
+        <li class="filter-btn" data-filter=".religion"><button>Заболевания кожи</button></li>
+        <li class="filter-btn" data-filter=".infographics"><button>Нарушения обмена веществ</button></li>
+        <li class="filter-btn" data-filter=".other"><button>Заболевания органов дыхания</button></li>
       </ul>
-      <br>
-      +420 731 500 797
+      <div class="spa-hotels-list grid">
+        <figure class="spa-hotels-list-item all opinion">
+          //= ./components/item.html
+        </figure>
+        <figure class="spa-hotels-list-item all opinion">
+          //= ./components/item.html
+        </figure>
+        <figure class="spa-hotels-list-item all research">
+          //= ./components/item.html
+        </figure>
+        <figure class="spa-hotels-list-item all research">
+          //= ./components/item.html
+        </figure>
+        <figure class="spa-hotels-list-item all other">
+          //= ./components/item.html
+        </figure>
+      </div>
+      <div class="no-results" style="display: none">
+        По вашему запросу ничего не найдено. 😞
+      </div>
     </div>
   </section>
   <section class="consulting-form">

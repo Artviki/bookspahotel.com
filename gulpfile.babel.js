@@ -34,7 +34,8 @@ const
         //  so gulp will concat and minifying them into the one final file.
         libs: [
           './app/js/lib/jquery.min.js',
-          // './app/js/lib/bootstrap.min.js' // For example
+          './app/js/lib/scrolltop.js',
+          './app/js/lib/isotope.js',
         ]
       },
       images: {
