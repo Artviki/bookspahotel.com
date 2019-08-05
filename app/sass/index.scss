@@ -53,74 +53,6 @@
 			}
 		}
 	}
-	.spa-hotels {
-		padding: 40px 0;
-		h1 {
-			font-size: 38px;
-			font-weight: 300;
-			line-height: 0.46;
-			color: $blue;
-			margin-bottom: 25px;
-			text-align: center;
-		}
-		.filter-controllers {
-			display: flex;
-			justify-content: space-between;
-			flex-wrap: wrap;
-			list-style: none;
-			padding: 0;
-			margin-bottom: 35px;
-			.filter-btn {
-				button {
-					min-width: 250px;
-					text-align: left;
-					font-weight: 300;
-					color: #6b6b6b;
-					background-color: transparent;
-					border: 0;
-					text-transform: capitalize;
-					&:focus {
-						outline: none;
-					}
-				}
-				&.active button {
-					text-decoration: underline;
-				}
-			}
-		}
-		.spa-hotels-list {
-			display: flex;
-			width: 100%;
-
-			// flex-wrap: wrap;
-			// justify-content: space-between;
-
-			&-item {
-				// position: relative !important;
-				width: 360px;
-				height: 185px;
-				margin: 0 0 60px;
-				.average-score {
-					position: absolute;
-					right: 10px;
-					top: 10px;
-					width: 97px;
-					height: 34px;
-					color: $white;
-					background-color: #0064a7;
-					em {
-						font-style: normal;
-						font-size: 12px;
-						font-weight: 300;
-					}
-					strong {
-						font-size: 16px;
-						font-weight: 300;
-					}
-				}
-			}
-		}
-	}
 	.consulting-form {
 		text-align: center;
 		background-color: $blue;
@@ -151,10 +83,4 @@
 			background-color: #f2fbff;
 		}
 	}
-}
-
-.all:nth-child(2) {
-	margin-left: auto !important;
-	margin-right: auto !important;
-	background-color: red;
 }

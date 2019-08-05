@@ -1,6 +1,48 @@
 //= ./partials/head.html
 <!-- Index -->
 <section class="index">
+  <section class="spa-hotels-by-country">
+    <div class="container">
+      <h1>Выберите страну для оздоровления</h1>
+      <ul class="filter-controllers">
+        <!-- This data-filter options will get from back-end -->
+        <li class="filter-btn active" data-filter="*"><button>Азербайджан</button></li>
+        <li class="filter-btn" data-filter=".opinion"><button>Беларусь</button></li>
+        <li class="filter-btn" data-filter=".research"><button>Болгария</button></li>
+        <li class="filter-btn" data-filter=".society"><button>Венгрия</button></li>
+        <li class="filter-btn" data-filter=".economy"><button>Германия</button></li>
+        <li class="filter-btn" data-filter=".religion"><button>Италия</button></li>
+        <li class="filter-btn" data-filter=".infographics"><button>Латвия</button></li>
+        <li class="filter-btn" data-filter=".other"><button>Литва</button></li>
+        <li class="filter-btn" data-filter=".opinion"><button>Польша</button></li>
+        <li class="filter-btn" data-filter=".opinion"><button>Словакия</button></li>
+        <li class="filter-btn" data-filter=".research"><button>Словения</button></li>
+        <li class="filter-btn" data-filter=".society"><button>Франция</button></li>
+        <li class="filter-btn" data-filter=".economy"><button>Чехия</button></li>
+      </ul>
+      <div class="spa-hotels-list grid">
+        <!-- Same data-filter options will get from back-end as a className -->
+        <figure class="spa-hotels-list-item all opinion">
+          //= ./components/item.html
+        </figure>
+        <figure class="spa-hotels-list-item all opinion">
+          //= ./components/item.html
+        </figure>
+        <figure class="spa-hotels-list-item all research">
+          //= ./components/item.html
+        </figure>
+        <figure class="spa-hotels-list-item all research">
+          //= ./components/item.html
+        </figure>
+        <figure class="spa-hotels-list-item all other">
+          //= ./components/item.html
+        </figure>
+      </div>
+      <div class="no-results" style="display: none">
+        По вашему запросу ничего не найдено. 😞
+      </div>
+    </div>
+  </section>
   <section class="international-contacts">
     <div class="container">
       <div class="section-flex">
@@ -32,6 +74,7 @@
     <div class="container">
       <h1>Выберите курорт по медицинскому профилю</h1>
       <ul class="filter-controllers">
+        <!-- This data-filter options will get from back-end -->
         <li class="filter-btn active" data-filter="*"><button>Желудочно-кишечный тракт</button></li>
         <li class="filter-btn" data-filter=".opinion"><button>Опорно-двигательный аппарат</button></li>
         <li class="filter-btn" data-filter=".research"><button>Сердечно-сосудистая система</button></li>
@@ -42,6 +85,7 @@
         <li class="filter-btn" data-filter=".other"><button>Заболевания органов дыхания</button></li>
       </ul>
       <div class="spa-hotels-list grid">
+        <!-- Same data-filter options will get from back-end as a className -->
         <figure class="spa-hotels-list-item all opinion">
           //= ./components/item.html
         </figure>

@@ -1,43 +1,38 @@
 'use strict';
 
-(function () {
-  $(document).ready(function () {
-    // Welcome Console
-    console.log(
-      '%cBookSpaHotel',
-      'color: #0063a7; font-size: 28px; text-shadow: -1px 0 #9bba23, 0 1px #9bba23, 1px 0 #9bba23, 0 -1px #9bba23;'
-    );
-    $('body').materialScrollTop();
+$(document).ready(function() {
+	// Welcome Console
+	console.log(
+		'%cBookSpaHotel',
+		'color: #0063a7; font-size: 28px; text-shadow: -1px 0 #9bba23, 0 1px #9bba23, 1px 0 #9bba23, 0 -1px #9bba23;'
+	);
 
+	// ScrollTop
+	$('body').materialScrollTop();
 
-  //  Isotope
-  const grid = $('.grid');
-  grid.isotope({
-    itemSelector: '.spa-hotels-list-item',
-    filter: '.all'
-  });
+	//  Isotope function to check if filters have some results
+	function checkResults(grid, div) {
+		let visibleItemsCount = grid.data('isotope').filteredItems.length;
+		visibleItemsCount > 0 ? div.hide() : div.show();
+	}
 
-  $('#filter').on('change', function () {
-    grid.isotope({ filter: this.value });
-    checkResults();
-  });
+	//  Isotope
+	const isotopeHandler = (className) => {
+		const grid = $(`${className} .grid`);
+		grid.isotope({
+			itemSelector: '.spa-hotels-list-item',
+			filter: '.all'
+		});
 
-  //  Function to check if filters have some results
-  function checkResults() {
-    let visibleItemsCount = grid.data('isotope').filteredItems.length;
-    if (visibleItemsCount > 0) {
-      $('.no-results').hide();
-    } else {
-      $('.no-results').show();
-    }
-  }
+		$(`${className}`).on('click', 'li', function() {
+			const filterValue = $(this).attr('data-filter');
+			grid.isotope({ filter: filterValue });
+			$(`${className} li`).removeClass('active');
+			$(this).addClass('active');
+			checkResults(grid, $(`${className} .no-results`));
+		});
+	};
 
-  $('.spa-hotels').on('click', 'li', function () {
-    const filterValue = $(this).attr('data-filter');
-    grid.isotope({ filter: filterValue });
-    $('.spa-hotels li').removeClass('active');
-    $(this).addClass('active');
-    checkResults();
-  });
-  });
-})();
+	isotopeHandler('.spa-hotels-by-country');
+	isotopeHandler('.spa-hotels');
+});
