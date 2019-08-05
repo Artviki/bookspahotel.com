@@ -6,3 +6,6 @@
 [![dependencies Status](https://david-dm.org/RamilMamedo/bb8/status.svg)](https://david-dm.org/RamilMamedo/bb8)
 [![devDependencies Status](https://david-dm.org/RamilMamedo/bb8/dev-status.svg)](https://david-dm.org/RamilMamedo/bb8?type=dev)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/RamilMamedo/bb8/blob/master/LICENCE)
+
+
+### For installation guide check out [this](https://github.com/RamilMamedo/bb8/) repository
