@@ -8,4 +8,8 @@
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/RamilMamedo/bb8/blob/master/LICENCE)
 
 
-### For installation guide check out [this](https://github.com/RamilMamedo/bb8/) repository
+### For installation guide check out [this](https://github.com/RamilMamedo/bb8/) repository or you can just run this command ;)
+
+```bash
+❯ $ git clone https://github.com/RamilMamedo/bookspahotel.com.git && yarn && yarn start
+```
