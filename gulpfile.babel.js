@@ -31,7 +31,7 @@ const $ = plugins(),
 				all: './app/js/**/*.js',
 				//  You can specify the path to JavaScript libs that you're going to use in this `libs` array,
 				//  so gulp will concat and minifying them into the one final file.
-				libs: [ './app/js/lib/jquery.min.js', './app/js/lib/scrolltop.js', './app/js/lib/isotope.js' ]
+				libs: [ './app/js/lib/jquery.min.js', './app/js/lib/scrolltop.js', './app/js/lib/isotope.js', './app/js/lib/select2.min.js', './app/js/lib/pikaday.min.js' ]
 			},
 			images: {
 				root: './app/img/',

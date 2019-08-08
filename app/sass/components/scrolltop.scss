@@ -85,8 +85,6 @@ $mst-icon: true !default; // Set false if you want to use your own sign directly
 
 %mst-icon {
 	border-radius: 5px;
+	@include bg-base64(contain, center);
 	background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Crect width='100' height='100' fill='%232A99CF'/%3E%3Cpolygon fill='%23FFF' fill-rule='nonzero' points='32.012 .227 0 32.274 7.55 39.831 32.012 15.342 56.475 39.831 64.024 32.274' transform='translate(17.988 30.117)'/%3E%3C/g%3E%3C/svg%3E%0A");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
 }
