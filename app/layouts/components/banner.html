@@ -64,8 +64,29 @@
       </select>
       <input class="search-datapicker arrival" type="text" placeholder="Дата заезда" required />
       <input class="search-datapicker departure" type="text" placeholder="Дата выезда" required />
-      <span class="search-modals">3-х разовое питание с лечением ▼</span>
-      <span class="search-modals">2 взрослых</span>
+      <span class="search-modals feeding-type">3-х разовое питание с лечением &#9662;</span>
+      <span class="search-modals number-of-people">
+        <span class="toggler">Количество гостей &#9662;</span>
+        <div class="dropdown">
+          <div class="form-group">
+            <label for="adult">Взрослые</label>
+            <div class="handle-counter" id="adultCounter">
+              <button type="button" class="btn counter-minus">-</button>
+              <input id="adult" name="adult" type="text" value="2" readonly required>
+              <button type="button" class="btn counter-plus">+</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="child">Дети</label>
+            <div class="handle-counter" id="childCounter">
+              <button type="button" class="btn counter-minus">-</button>
+              <input id="child" name="child" type="text" value="0" readonly required>
+              <button type="button" class="btn counter-plus">+</button>
+            </div>
+          </div>
+          <a class="other" href="" title="Выберете другие варианты">Выберете другие варианты <i class="icon"></i></a>
+        </div>
+      </span>
       <button class="search-btn" type="submit"><i class="icon"></i> Узнать цены</button>
     </form>
   </div>

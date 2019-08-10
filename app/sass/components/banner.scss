@@ -19,20 +19,72 @@
 	padding: 10px 15px;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	// justify-content: space-between;
 	height: 62px;
 	border-radius: 3px;
 	background-color: $white;
 	.search-select {
 		display: block;
 		opacity: 0;
+		outline: none;
 	}
 	.search-modals {
 		font-size: $ftz-extra-small;
 		color: #b4b4b4;
+		padding: 0 20px;
+		&.feeding-type {
+			cursor: pointer;
+			border-left: 1px solid #b4b4b4;
+			border-right: 1px solid #b4b4b4;
+		}
+		&.number-of-people {
+			border-right: 1px solid #b4b4b4;
+			position: relative;
+		}
+		.toggler {
+			cursor: pointer;
+		}
+		.dropdown {
+			display: none;
+			position: absolute;
+			left: 0;
+			padding: 15px;
+			top: 40px;
+			width: 250px;
+			background-color: $white;
+			.form-group {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				&:not(:last-child) {
+					margin-bottom: 15px;
+				}
+				label {
+					margin-bottom: 0;
+				}
+			}
+			a.other {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				font-size: $ftz-extra-small;
+				line-height: 1.33;
+				letter-spacing: 0.3px;
+				color: #b4b4b4;
+				text-decoration: underline;
+				i.icon {
+					display: block;
+					width: 21px;
+					height: 21px;
+					@include bg-base64(contain, center);
+					background-image: url("data:image/svg+xml,%3Csvg height='512px' viewBox='0 0 512 512' width='512px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%239aba22' d='M199.945 359.898h67.98v39.989h-67.98zm-74.98-4.996c-13.805 0-24.992 11.188-24.992 24.993 0 13.8 11.187 24.992 24.992 24.992 13.805 0 24.992-11.192 24.992-24.992 0-13.805-11.187-24.993-24.992-24.993zm276.922-121.968H199.945v39.988h201.942zm-276.922-4.997c-13.805 0-24.992 11.188-24.992 24.993 0 13.804 11.187 24.992 24.992 24.992 13.805 0 24.992-11.188 24.992-24.992 0-13.805-11.187-24.993-24.992-24.993zM401.887 112.97H199.945v39.988h201.942zm-276.922-5c-13.805 0-24.992 11.191-24.992 24.992 0 13.805 11.187 24.996 24.992 24.996 13.805 0 24.992-11.191 24.992-24.996 0-13.8-11.187-24.992-24.992-24.992zM39.988 451.875V59.985c0-11.028 8.969-19.997 19.996-19.997h391.891c11.023 0 19.992 8.969 19.992 19.996v225.938h39.988V59.984C511.855 26.91 484.95 0 451.875 0H59.985C26.91 0 0 26.91 0 59.984v391.891c0 33.074 26.91 59.98 59.984 59.98h230.934v-39.988H59.984c-11.027 0-19.996-8.969-19.996-19.992zM483.723 512l-39.82-39.82c-13.473 8.05-29.212 12.683-46.012 12.683-49.614 0-89.977-40.363-89.977-89.972 0-49.614 40.363-89.977 89.977-89.977 49.609 0 89.972 40.363 89.972 89.977 0 18.355-5.531 35.441-15.004 49.691L512 483.722zm-85.832-67.125c27.562 0 49.984-22.422 49.984-49.984s-22.422-49.989-49.984-49.989-49.989 22.426-49.989 49.989 22.426 49.984 49.989 49.984zm0 0'/%3E%3C/svg%3E");
+				}
+			}
+		}
 	}
 
 	.search-btn {
+		margin-left: auto;
 		display: flex;
 		align-items: center;
 		padding: 10px 25px;

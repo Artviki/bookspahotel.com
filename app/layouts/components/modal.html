@@ -1,0 +1,29 @@
+<!-- Modal -->
+<section class="modal">
+  <h3>Выберит режим питания и лечения для каждого гостя</h3>
+  <div class="select-boxes">
+    <div class="adults">
+      <label>Количество взрослых (не более 4-х)</label>
+      <div class="input-group" id="field-1">
+        <span class="number">1</span>
+        <select name="adults-select" id="adults-select-1">
+          <option>3-х разовое питание с лечением</option>
+          <option>3-х разовое питание без лечения</option>
+          <option>2-х разовое питание с лечением</option>
+          <option>2-х разовое питание без лечения</option>
+        </select>
+        <button class="input-action-btn remove" type="button"><span>&#8722;</span></button>
+      </div>
+    </div>
+    <div class="childs">
+      <label for="">Количество детей (не более 4-х)</label>
+    </div>
+  </div>
+  <div class="input-group-adder-btns">
+    <button class="input-action-btn add adults-add" type="button"><span>&#43;</span>Добавить взрослого</button>
+    <button class="input-action-btn add child-add" type="button"><span>&#43;</span>Добавить ребенка</button>
+  </div>
+  <button class="confirmation" type="button">Подтвердить</button>
+</section>
+<div class="overlay"></div>
+<!-- /Modal -->
