@@ -2,21 +2,19 @@
 
 $(document).ready(function() {
   // Welcome Console
-  console.log(
-    '%cBookSpaHotel',
-    'color: #0063a7; font-size: 28px; text-shadow: -1px 0 #9bba23, 0 1px #9bba23, 1px 0 #9bba23, 0 -1px #9bba23;'
-  );
+  console.log('%cBookSpaHotel.com', 'color: #9aba22; font-size: 28px;');
 
   // ScrollTop
   $('body').materialScrollTop();
+  // Select2
+  $('.search-select').select2();
 
-  //  Isotope function to check if filters have some results
-  function checkResults(grid, div) {
+  // START -- Isotope Filtering
+  const checkResults = (grid, div) => {
     let visibleItemsCount = grid.data('isotope').filteredItems.length;
     visibleItemsCount > 0 ? div.hide() : div.show();
-  }
+  };
 
-  //  Isotope
   const isotopeHandler = className => {
     const grid = $(`${className} .grid`);
     grid.isotope({
@@ -35,8 +33,9 @@ $(document).ready(function() {
 
   isotopeHandler('.spa-hotels-by-country');
   isotopeHandler('.spa-hotels');
-  $('.search-select').select2();
+  // END   -- Isotope Filtering
 
+  // START -- DateTime Picker
   const i18n = {
     previousMonth: 'Предыдущий Месяц',
     nextMonth: 'Следующий Иесяц',
@@ -76,28 +75,61 @@ $(document).ready(function() {
     minDate: new Date($.now()),
     i18n: i18n,
   });
+  // END   -- DateTime Picker
 
-  $('.number-of-people .toggler').on('click', function() {
+  // START -- Number Of People Inputs
+  let adultInput = false;
+  let childInput = false;
+  const toggler = '.number-of-people .toggler';
+
+  $(toggler).on('click', function() {
     $('.dropdown').slideToggle();
+  });
+
+  const showDefault = (adultInput, childInput) => {
+    if (adultInput && childInput) {
+      $(`${toggler} .default`).show();
+      $(`${toggler} .adult`).hide();
+      $(`${toggler} .child`).hide();
+    } else {
+      $(`${toggler} .default`).hide();
+      $(`${toggler} .adult`).show();
+      $(`${toggler} .child`).show();
+    }
+  };
+
+  $('#adultCounter').handleCounter({
+    minimum: 0,
+    maximize: 4,
+    onChange: function(value) {
+      $(`${toggler} .adult .sum`).text(value);
+      if (parseInt(value) === 0) {
+        adultInput = true;
+        showDefault(adultInput, childInput);
+      } else {
+        adultInput = false;
+        showDefault(adultInput, childInput);
+      }
+    },
   });
 
   $('#childCounter').handleCounter({
     minimum: 0,
-    maximize: 10,
-    onChange: function() {},
-    onMinimum: function() {},
-    onMaximize: function() {},
+    maximize: 4,
+    onChange: function(value) {
+      $(`${toggler} .child .sum`).text(value);
+      if (parseInt(value) === 0) {
+        childInput = true;
+        showDefault(adultInput, childInput);
+      } else {
+        childInput = false;
+        showDefault(adultInput, childInput);
+      }
+    },
   });
+  // END   -- Number Of People Inputs
 
-  $('#adultCounter').handleCounter({
-    minimum: 0,
-    maximize: 10,
-    onChange: function() {},
-    onMinimum: function() {},
-    onMaximize: function() {},
-  });
-
-  //
+  // START -- Feeding Type Modal
   $('.feeding-type').on('click', function() {
     $('body').addClass('modal-opened');
   });
@@ -138,4 +170,58 @@ $(document).ready(function() {
       $('.adults').append(fieldWrapper);
     }
   });
+  $('.child-add').click(function() {
+    const lastField = $('.children .input-group:last');
+    const intId =
+      (lastField && lastField.length && lastField.data('idx') + 1) || 1;
+    const inputGroup = $(`<div class="input-group" id="field-${intId}"/>`);
+    inputGroup.data('idx', intId);
+    const number = $(`<span class="number">${intId}</span>`);
+
+    const mainSelect = $(
+      `<select name="child-select" id="child-select-1">
+          <option>3-х разовое питание с лечением</option>
+          <option>3-х разовое питание без лечения</option>
+          <option>2-х разовое питание с лечением</option>
+          <option>2-х разовое питание без лечения</option>
+        </select>`
+    );
+
+    const ageSelect = $(
+      `<select name="child-age-select" id="child-age-select-1">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+        </select>`
+    );
+
+    const removeBtn = $(
+      ` <button class="input-action-btn remove" type="button"><span>&#8722;</span></button>`
+    );
+
+    removeBtn.click(function() {
+      $(this)
+        .parent()
+        .remove();
+    });
+    inputGroup.append(number);
+    inputGroup.append(mainSelect);
+    inputGroup.append(ageSelect);
+    inputGroup.append(removeBtn);
+    if (intId <= 4) {
+      $('.children').append(inputGroup);
+    }
+  });
+  // END   -- Feeding Type Modal
 });

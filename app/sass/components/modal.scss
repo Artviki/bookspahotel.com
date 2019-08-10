@@ -64,6 +64,13 @@ $dark-green: #9aba22;
 			background-color: #f0f7ff;
 			font-size: $ftz-small;
 			color: #6789a0;
+			outline: none;
+			&[name="child-select"] {
+				margin-right: 0;
+			}
+			&[name="child-age-select"] {
+				margin-left: 5px;
+			}
 		}
 	}
 	.input-action-btn {
@@ -71,6 +78,7 @@ $dark-green: #9aba22;
 		align-items: center;
 		justify-content: center;
 		border: 0;
+		padding: 0;
 		background-color: transparent;
 		span {
 			display: inline-block;
