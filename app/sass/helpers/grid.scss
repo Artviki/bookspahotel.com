@@ -17,18 +17,18 @@ $breakpoint-sm: 576px;
 	margin-right: auto;
 	max-width: $container-xl;
 	// border: 1px solid red;
-	@media (max-width: $breakpoint-xl) {
-		max-width: $container-lg;
-	}
-	@media (max-width: $breakpoint-lg) {
-		max-width: $container-md;
-	}
-	@media (max-width: $breakpoint-md) {
-		max-width: $container-sm;
-	}
-	@media (max-width: $breakpoint-sm) {
-		max-width: unset;
-		padding-left: 30px;
-		padding-right: 30px;
-	}
+	// @media (max-width: $breakpoint-xl) {
+	// 	max-width: $container-lg;
+	// }
+	// @media (max-width: $breakpoint-lg) {
+	// 	max-width: $container-md;
+	// }
+	// @media (max-width: $breakpoint-md) {
+	// 	max-width: $container-sm;
+	// }
+	// @media (max-width: $breakpoint-sm) {
+	// 	max-width: unset;
+	// 	padding-left: 30px;
+	// 	padding-right: 30px;
+	// }
 }

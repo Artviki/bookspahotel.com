@@ -3,7 +3,17 @@
   <div class="container">
     <h1 class="banner-title">Лучшие санатории Европы и Азии</h1>
     <form class="search-form" action="" method="">
-      <select class="search-select">
+      <div class="select-tabs">
+        <button type="button" class="btns location active" data-type="location">
+          <i class="icon"> </i>
+          <span>Поиск курорта или санатория</span>
+        </button>
+        <button type="button" class="btns medical-portfolio" data-type="medical-portfolio">
+          <i class="icon"></i>
+          <span>Поиск по медицинскому профилю</span>
+        </button>
+      </div>
+      <select class="search-select location active" data-type="location">
         <option value="Выберите курорт или санаторий" disabled selected>Выберите курорт или санаторий</option>
         <optgroup label="Курорты Азербайджана">
           <option value="Нафталан">Нафталан</option>
@@ -60,6 +70,39 @@
         </optgroup>
         <optgroup label="Курорты Польши">
           <option value="Абано Терме">Абано Терме</option>
+        </optgroup>
+      </select>
+      <select class="search-select medical-portfolio" data-type="medical-portfolio">
+        <option value="Выберите курорт или санаторий" disabled selected>Выберите курорт или санаторий</option>
+        <optgroup label="Курорты Азербайджана">
+          <option value="Нафталан">Нафталан</option>
+        </optgroup>
+        <optgroup label="Курорты Венгрии">
+          <option value="Будапешт">Будапешт</option>
+          <option value="Хайдусобосло">Хайдусобосло</option>
+          <option value="Шарвар">Шарвар</option>
+          <option value="Бюкфюрдо">Бюкфюрдо</option>
+          <option value="Хевиз">Хевиз</option>
+        </optgroup>
+        <optgroup label="Курорты Италии">
+          <option value="Абано Терме">Абано Терме</option>
+          <option value="Фьюджи">Фьюджи</option>
+          <option value="Монтекатини Терме">Монтекатини Терме</option>
+        </optgroup>
+        <optgroup label="Курорты Польши">
+          <option value="Поляница-Здруй">Поляница-Здруй</option>
+          <option value="Кудова-Здруй">Кудова-Здруй</option>
+          <option value="Сверадув-Здруй">Сверадув-Здруй</option>
+          <option value="Душники-Здруй">Душники-Здруй</option>
+          <option value="Цеплице-Здруй">Цеплице-Здруй</option>
+          <option value="Колобжег ">Колобжег </option>
+        </optgroup>
+        <optgroup label="Курорты Словении">
+          <option value="Порторож ">Порторож </option>
+          <option value="Терме Олимия">Терме Олимия</option>
+          <option value="Струньян ">Струньян </option>
+          <option value="Раденцы ">Раденцы </option>
+          <option value="Рогашка Слатина">Рогашка Слатина</option>
         </optgroup>
       </select>
       <input class="search-datapicker arrival" type="text" placeholder="Дата заезда" required />

@@ -35,6 +35,7 @@ $dark-green: #9aba22;
 		display: flex;
 		align-items: flex-start;
 		justify-content: space-between;
+
 		label {
 			color: $dark-blue;
 			margin-bottom: 5px;
@@ -76,7 +77,7 @@ $dark-green: #9aba22;
 	.input-action-btn {
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-end;
 		border: 0;
 		padding: 0;
 		background-color: transparent;
@@ -90,13 +91,19 @@ $dark-green: #9aba22;
 			color: $white;
 			background-color: $dark-blue;
 		}
+		&.adults-add {
+			margin-left: 123px;
+		}
+		&.child-add {
+			margin-right: 88px;
+		}
 	}
 	.input-group-adder-btns {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		.add {
-			margin-left: auto;
+			// margin-left: auto;
 			margin-top: 10px;
 			font-size: $ftz-small;
 			color: $dark-blue;

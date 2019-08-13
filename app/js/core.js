@@ -224,4 +224,13 @@ $(document).ready(function() {
     }
   });
   // END   -- Feeding Type Modal
+
+  $('.select-tabs .btns').on('click', function() {
+    $('.btns.active').removeClass('active');
+    $(this).addClass('active');
+    $('.search-select').removeClass('active');
+    console.log($(this).data().type, '$(this).data().type');
+
+    $(`.search-select.${$(this).data().type}`).addClass('active');
+  });
 });
