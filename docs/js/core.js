@@ -59,6 +59,10 @@ $(document).ready(function () {
   var feedingToggler = '.feeding-type .toggler';
   $(feedingToggler).on('click', function () {
     $('.feeding-type .dropdown').slideToggle();
+  });
+  $('.feeding-type li').on('click', function () {
+    $("".concat(feedingToggler, " .text")).text($(this).text());
+    $('.feeding-type .dropdown').slideToggle();
   }); // START -- Number Of People Inputs
 
   var adultInput = false;
