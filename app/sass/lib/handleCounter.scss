@@ -17,7 +17,7 @@
 .handle-counter input {
 	width: 40px;
 	height: 20px;
-	border: 1px solid #b4b4b4;
+	border: 1px solid $gray-light;
 	border-left: 0;
 	border-right: 0;
 	outline: none;
@@ -27,8 +27,8 @@
 	padding: 0;
 	width: 20px;
 	height: 20px;
-	border: 1px solid #b4b4b4;
-	color: #b4b4b4;
+	border: 1px solid $gray-light;
+	color: $gray-light;
 	background-color: transparent;
 	&:focus {
 		outline: none;

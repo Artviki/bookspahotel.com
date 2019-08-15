@@ -14,7 +14,7 @@
 			color: $gray;
 			transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
 			&:hover {
-				color: $green;
+				color: $blue;
 			}
 		}
 		.slogan {
@@ -67,7 +67,7 @@
 					left: 0;
 					width: 0;
 					height: 1px;
-					background-color: $green;
+					background-color: $blue;
 					transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1);
 				}
 				&:hover {

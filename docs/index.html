@@ -49,10 +49,9 @@
   <link rel="me" href="mailto:rommelmamedov@gmail.com" />
   <meta name="author" content="Ramil Mamedov" />
   <!--  Favicons -->
-  <!-- <link rel="icon" href="" sizes="any" type="image/svg+xml" /> -->
-  <!-- <link rel="icon" href="./img/favicons/android-chrome-48x48.png" sizes="48x48" type="image/png" /> -->
-  <!-- <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-180x180.png" sizes="180x180" type="image/png" /> -->
-  <!-- <link rel="apple-touch-icon-precomposed" href="./img/favicons/apple-touch-icon-precomposed.png" type="image/png" /> -->
+  <link rel="icon" href="./img/favicons/android-chrome-48x48.png" sizes="48x48" type="image/png" />
+  <link rel="apple-touch-icon" href="./img/favicons/apple-touch-icon-180x180.png" sizes="180x180" type="image/png" />
+  <link rel="apple-touch-icon-precomposed" href="./img/favicons/apple-touch-icon-precomposed.png" type="image/png" />
   <!--  Style Sheets -->
   <link rel="stylesheet" href="css/main.min.css" />
   <!--  JavaScript Files -->
@@ -102,7 +101,7 @@
     <div class="container">
       <nav>
         <ul>
-          <li class="list-logo"><a href="/" title="BookSpaHotel - Logo"><img class="logo" src="./img/logo-n.png" alt="BookSpaHotel - Logo"></a></li>
+          <li class="list-logo"><a href="/" title="BookSpaHotel - Logo"><img class="logo" src="./img/logo.png" alt="BookSpaHotel - Logo"></a></li>
           <li class="list-item"><a href="#" title="Как Выбрать Курорт">Как Выбрать Курорт</a></li>
           <li class="list-item"><a href="#" title="Экскурсии">Экскурсии</a></li>
           <li class="list-item"><a href="#" title="Трансферы">Трансферы</a></li>
@@ -129,7 +128,7 @@
             <span>Поиск по медицинскому профилю</span>
           </button>
         </div>
-        <select class="search-select location active" data-type="location">
+        <select hidden class=" search-select location active" data-type="location">
           <option value="Выберите курорт или санаторий" disabled selected>Выберите курорт или санаторий</option>
           <optgroup label="Курорты Азербайджана">
             <option value="Нафталан">Нафталан</option>
@@ -188,7 +187,7 @@
             <option value="Абано Терме">Абано Терме</option>
           </optgroup>
         </select>
-        <select class="search-select medical-portfolio" data-type="medical-portfolio">
+        <select hidden class="search-select medical-portfolio" data-type="medical-portfolio">
           <option value="Выберите курорт или санаторий" disabled selected>Выберите курорт или санаторий</option>
           <optgroup label="Курорты Азербайджана">
             <option value="Нафталан">Нафталан</option>
@@ -223,8 +222,19 @@
         </select>
         <input class="search-datapicker arrival" type="text" placeholder="Дата заезда" required />
         <input class="search-datapicker departure" type="text" placeholder="Дата выезда" required />
-        <span class="search-modals feeding-type">3-х разовое питание с лечением &#9662;</span>
+        <span class="search-modals feeding-type">
+          <span class="toggler"> 3-х разовое питание с лечением &#9662; </span>
+          <div class="dropdown">
+            <ul class="wrapper">
+              <li class="active">3-х разовое питание с лечением</li>
+              <li class="">3-х разовое питание без лечения</li>
+              <li class="">2-х разовое питание с лечением</li>
+              <li class="">2-х разовое питание без лечения</li>
+            </ul>
+          </div>
+        </span>
         <span class="search-modals number-of-people">
+          <input hidden id="numberOfPeople" name="numberOfPeople" type="text" value="">
           <span class="toggler">
             <span class="default" style="display: none">Количество гостей</span>
             <span class="adult"><span class="sum">2</span> взрослых</span>
@@ -232,23 +242,25 @@
             <span>&#9662;</span>
           </span>
           <div class="dropdown">
-            <div class="form-group">
-              <label for="adult">Взрослые</label>
-              <div class="handle-counter" id="adultCounter">
-                <button type="button" class="btn counter-minus">-</button>
-                <input id="adult" name="adult" type="text" value="2" readonly required>
-                <button type="button" class="btn counter-plus">+</button>
+            <div class="wrapper">
+              <div class="form-group">
+                <label for="adult">Взрослые</label>
+                <div class="handle-counter" id="adultCounter">
+                  <button type="button" class="btn counter-minus">-</button>
+                  <input id="adult" name="adult" type="text" value="2" readonly required>
+                  <button type="button" class="btn counter-plus">+</button>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="child">Дети</label>
-              <div class="handle-counter" id="childCounter">
-                <button type="button" class="btn counter-minus">-</button>
-                <input id="child" name="child" type="text" value="0" readonly required>
-                <button type="button" class="btn counter-plus">+</button>
+              <div class="form-group">
+                <label for="child">Дети</label>
+                <div class="handle-counter" id="childCounter">
+                  <button type="button" class="btn counter-minus">-</button>
+                  <input id="child" name="child" type="text" value="0" readonly required>
+                  <button type="button" class="btn counter-plus">+</button>
+                </div>
               </div>
+              <button type="button" class="other">Выберете другие варианты <i class="icon"></i></button>
             </div>
-            <a class="other" href="" title="Выберете другие варианты">Выберете другие варианты <i class="icon"></i></a>
           </div>
         </span>
         <button class="search-btn" type="submit"><i class="icon"></i> Узнать цены</button>
@@ -572,7 +584,7 @@
     <div class="container">
       <div class="footer-columns">
         <div class="column">
-          <a href="/" title="BookSpaHotel - Logo"><img class="logo" src="./img/logo-n.png" alt="BookSpaHotel - Logo"></a>
+          <a href="/" title="BookSpaHotel - Logo"><img class="logo" src="./img/logo.png" alt="BookSpaHotel - Logo"></a>
           <p class="slogan">Быстрый поиск санаториев по низкой цене</p>
           <a class="contact-links" href="tel:00420731500797" title="Mobile Number"><i class="icon-phone-3"></i>+420-731-500-797</a>
           <a class="contact-links" href="mailto:info@bookspahotel.com" title="Email Address"><i class="icon-mail"></i>info@bookspahotel.com</a>

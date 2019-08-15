@@ -1,6 +1,4 @@
 /*!   === Modal ===   */
-$dark-blue: #00426e;
-$dark-green: #9aba22;
 
 .overlay {
 	display: none;
@@ -28,7 +26,7 @@ $dark-green: #9aba22;
 		text-align: center;
 		font-size: 21px;
 		font-weight: 600;
-		color: $dark-blue;
+		color: $blue-secondary;
 		margin-bottom: 40px;
 	}
 	.select-boxes {
@@ -37,7 +35,7 @@ $dark-green: #9aba22;
 		justify-content: space-between;
 
 		label {
-			color: $dark-blue;
+			color: $blue-secondary;
 			margin-bottom: 5px;
 			margin-left: 20px;
 		}
@@ -46,7 +44,7 @@ $dark-green: #9aba22;
 			height: 10px;
 			line-height: 10px;
 			text-align: center;
-			color: $dark-blue;
+			color: $blue-secondary;
 			font-weight: bold;
 		}
 	}
@@ -66,11 +64,14 @@ $dark-green: #9aba22;
 			font-size: $ftz-small;
 			color: #6789a0;
 			outline: none;
+			@include bg-base64(12px, 95%);
+			background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 129 129' fill='%236789a0'%3E%3Cpath d='M121.3 34.6c-1.6-1.6-4.2-1.6-5.8 0l-51 51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8l53.9 53.9c.8.8 1.8 1.2 2.9 1.2 1 0 2.1-.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2.1-5.8z'/%3E%3C/svg%3E");
 			&[name="child-select"] {
 				margin-right: 0;
 			}
 			&[name="child-age-select"] {
 				margin-left: 5px;
+				background-position: 80%;
 			}
 		}
 	}
@@ -89,7 +90,7 @@ $dark-green: #9aba22;
 			height: 14px;
 			border-radius: 1px;
 			color: $white;
-			background-color: $dark-blue;
+			background-color: $blue-secondary;
 		}
 		&.adults-add {
 			margin-left: 123px;
@@ -106,7 +107,7 @@ $dark-green: #9aba22;
 			// margin-left: auto;
 			margin-top: 10px;
 			font-size: $ftz-small;
-			color: $dark-blue;
+			color: $blue-secondary;
 			span {
 				margin-right: 10px;
 			}
@@ -121,7 +122,7 @@ $dark-green: #9aba22;
 		letter-spacing: 0.46px;
 		color: $white;
 		border-radius: 3px;
-		background-color: $dark-green;
+		background-color: $green-secondary;
 		padding: 10px 90px;
 	}
 }

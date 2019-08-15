@@ -44,31 +44,39 @@ $(document).ready(function () {
   var picker1 = new Pikaday({
     field: $('.search-datapicker.arrival')[0],
     minDate: new Date($.now()),
-    i18n: i18n
+    // i18n: i18n,
+    position: 'bottom left',
+    reposition: 'bottom-aligned'
   });
   var picker2 = new Pikaday({
     field: $('.search-datapicker.departure')[0],
     minDate: new Date($.now()),
-    i18n: i18n
+    // i18n: i18n,
+    position: 'bottom left',
+    reposition: 'bottom-aligned'
   }); // END   -- DateTime Picker
-  // START -- Number Of People Inputs
+
+  var feedingToggler = '.feeding-type .toggler';
+  $(feedingToggler).on('click', function () {
+    $('.feeding-type .dropdown').slideToggle();
+  }); // START -- Number Of People Inputs
 
   var adultInput = false;
   var childInput = false;
-  var toggler = '.number-of-people .toggler';
-  $(toggler).on('click', function () {
-    $('.dropdown').slideToggle();
+  var peopleToggler = '.number-of-people .toggler';
+  $(peopleToggler).on('click', function () {
+    $('.number-of-people .dropdown').slideToggle();
   });
 
   var showDefault = function showDefault(adultInput, childInput) {
     if (adultInput && childInput) {
-      $("".concat(toggler, " .default")).show();
-      $("".concat(toggler, " .adult")).hide();
-      $("".concat(toggler, " .child")).hide();
+      $("".concat(peopleToggler, " .default")).show();
+      $("".concat(peopleToggler, " .adult")).hide();
+      $("".concat(peopleToggler, " .child")).hide();
     } else {
-      $("".concat(toggler, " .default")).hide();
-      $("".concat(toggler, " .adult")).show();
-      $("".concat(toggler, " .child")).show();
+      $("".concat(peopleToggler, " .default")).hide();
+      $("".concat(peopleToggler, " .adult")).show();
+      $("".concat(peopleToggler, " .child")).show();
     }
   };
 
@@ -76,7 +84,7 @@ $(document).ready(function () {
     minimum: 0,
     maximize: 4,
     onChange: function onChange(value) {
-      $("".concat(toggler, " .adult .sum")).text(value);
+      $("".concat(peopleToggler, " .adult .sum")).text(value);
 
       if (parseInt(value) === 0) {
         adultInput = true;
@@ -91,7 +99,7 @@ $(document).ready(function () {
     minimum: 0,
     maximize: 4,
     onChange: function onChange(value) {
-      $("".concat(toggler, " .child .sum")).text(value);
+      $("".concat(peopleToggler, " .child .sum")).text(value);
 
       if (parseInt(value) === 0) {
         childInput = true;
@@ -104,7 +112,7 @@ $(document).ready(function () {
   }); // END   -- Number Of People Inputs
   // START -- Feeding Type Modal
 
-  $('.feeding-type').on('click', function () {
+  $('.other').on('click', function () {
     $('body').addClass('modal-opened');
   });
   $('.overlay').click(function () {
@@ -155,7 +163,6 @@ $(document).ready(function () {
     $('.btns.active').removeClass('active');
     $(this).addClass('active');
     $('.search-select').removeClass('active');
-    console.log($(this).data().type, '$(this).data().type');
     $(".search-select.".concat($(this).data().type)).addClass('active');
   });
 });
