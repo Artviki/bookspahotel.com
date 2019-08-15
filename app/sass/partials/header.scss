@@ -62,6 +62,10 @@
 				padding: 0 15px;
 				color: #0a0a0a;
 				font-size: $ftz-small;
+				transition: 0.3s ease-in-out;
+				&:hover {
+					color: $blue;
+				}
 			}
 		}
 
