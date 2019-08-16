@@ -56,6 +56,7 @@ body {
 	width: 100%;
 	padding: 20px;
 	border-radius: 3px;
+	z-index: 110;
 	&.active {
 		// display: flex;
 	}
@@ -68,11 +69,11 @@ body {
 		width: 160px;
 		font-size: $ftz-extra-small;
 		font-weight: 300;
-		color: #848484;
 		margin-bottom: 20px;
 		padding-left: 0;
 		padding-bottom: 5px !important;
 		border-bottom: 1px solid #b4b4b471;
+
 		span {
 			cursor: default;
 			display: block;
@@ -82,7 +83,14 @@ body {
 			margin-bottom: 10px;
 		}
 		li {
+			color: #848484;
+
+			cursor: pointer;
 			list-style: none;
+			transition: color 0.3s ease-in-out;
+			&:hover {
+				color: $blue;
+			}
 		}
 	}
 }

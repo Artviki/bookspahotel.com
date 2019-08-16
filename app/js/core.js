@@ -21,6 +21,15 @@ $(document).ready(function() {
     $('#location').toggleClass('opacity');
   });
 
+  $('body').on('click', function(e) {
+    // console.log(e.target, 'e.target');
+    // if ($(e.target).hasClass('dropdown-select') || $(e.target).is('li')) {
+    //   console.log(e.target, 'dropdown-select');
+    // } else {
+    //   $('.dropdown-select').toggleClass('opacity');
+    // }
+  });
+
   $('.book-spa-hotels.medicalPortfolio').on('click', function() {
     $('#medicalPortfolio').toggleClass('opacity');
   });
@@ -28,6 +37,7 @@ $(document).ready(function() {
   $('.select-tabs .btns').on('click', function() {
     $('.btns.active').removeClass('active');
     $(this).addClass('active');
+    $('.dropdown-select').removeClass('opacity');
     $('.book-spa-hotels').removeClass('active');
     $(`.book-spa-hotels.${$(this).data().type}`).addClass('active');
   });
