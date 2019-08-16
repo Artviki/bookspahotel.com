@@ -21,14 +21,7 @@ $(document).ready(function() {
     $('#location').toggleClass('opacity');
   });
 
-  $('body').on('click', function(e) {
-    // console.log(e.target, 'e.target');
-    // if ($(e.target).hasClass('dropdown-select') || $(e.target).is('li')) {
-    //   console.log(e.target, 'dropdown-select');
-    // } else {
-    //   $('.dropdown-select').toggleClass('opacity');
-    // }
-  });
+  $('body').on('click', function(e) {});
 
   $('.book-spa-hotels.medicalPortfolio').on('click', function() {
     $('#medicalPortfolio').toggleClass('opacity');
@@ -45,7 +38,7 @@ $(document).ready(function() {
   // ScrollTop
   $('body').materialScrollTop();
   // Select2
-  // $('.search-select').select2();
+  $('#age').select2();
 
   // START -- Isotope Filtering
   const checkResults = (grid, div) => {
@@ -178,7 +171,10 @@ $(document).ready(function() {
       if (parseInt(value) === 0) {
         childInput = true;
         showDefault(adultInput, childInput);
+        $(`${peopleToggler} .child`).hide();
+        $('.age-select').hide();
       } else {
+        $('.age-select').show();
         childInput = false;
         showDefault(adultInput, childInput);
       }

@@ -114,9 +114,8 @@
 						list-style: none;
 						padding: 8px 20px;
 						transition: 0.3s ease-in-out;
-						&.active {
-							color: $white;
-							background-color: $green-secondary;
+						&:hover {
+							color: $blue;
 						}
 					}
 				}
@@ -126,6 +125,8 @@
 			border-right: 1px solid $gray-light;
 			position: relative;
 			.toggler {
+				display: block;
+				width: 120px;
 				cursor: pointer;
 			}
 			.dropdown {
@@ -134,7 +135,7 @@
 				left: 0;
 				top: 40px;
 				width: 250px;
-				height: 121px;
+				height: 145px;
 				background-color: $white;
 				.wrapper {
 					padding: 15px;

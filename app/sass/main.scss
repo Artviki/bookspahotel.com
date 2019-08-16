@@ -44,9 +44,22 @@ body {
 	}
 }
 
+#age + .select2-container {
+	width: 80px !important;
+	height: 20px;
+	border: 1px solid #8f8f8f;
+	background-color: transparent;
+	color: #8f8f8f;
+	border-radius: 0;
+	font-size: 11px;
+	line-height: 20px;
+	outline: none;
+}
+
 .dropdown-select {
 	display: flex;
 	opacity: 0;
+	visibility: hidden;
 	background: #fff;
 	position: absolute !important;
 	padding: 0;
@@ -57,11 +70,9 @@ body {
 	padding: 20px;
 	border-radius: 3px;
 	z-index: 110;
-	&.active {
-		// display: flex;
-	}
 	&.opacity {
 		opacity: 1;
+		visibility: visible;
 	}
 	ul {
 		display: flex;
