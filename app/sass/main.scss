@@ -34,15 +34,18 @@ body {
 }
 
 .book-spa-hotels {
-	display: block;
+	display: none;
 	font-size: $ftz-extra-small;
 	color: $gray-light;
 	cursor: pointer;
 	width: 200px;
+	&.active {
+		display: block;
+	}
 }
 
 .dropdown-select {
-	display: none;
+	display: flex;
 	opacity: 0;
 	background: #fff;
 	position: absolute !important;
@@ -54,7 +57,7 @@ body {
 	padding: 20px;
 	border-radius: 3px;
 	&.active {
-		display: flex;
+		// display: flex;
 	}
 	&.opacity {
 		opacity: 1;

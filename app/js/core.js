@@ -17,15 +17,19 @@ $(document).ready(function() {
     options
   );
 
-  $('.book-spa-hotels').on('click', function() {
+  $('.book-spa-hotels.location').on('click', function() {
     $('#location').toggleClass('opacity');
+  });
+
+  $('.book-spa-hotels.medicalPortfolio').on('click', function() {
+    $('#medicalPortfolio').toggleClass('opacity');
   });
 
   $('.select-tabs .btns').on('click', function() {
     $('.btns.active').removeClass('active');
     $(this).addClass('active');
-    // $('.dropdown-select').removeClass('active');
-    // $(`.dropdown-select.${$(this).data().type}`).addClass('active');
+    $('.book-spa-hotels').removeClass('active');
+    $(`.book-spa-hotels.${$(this).data().type}`).addClass('active');
   });
 
   // ScrollTop
