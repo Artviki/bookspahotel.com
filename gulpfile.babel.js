@@ -38,7 +38,7 @@ const $ = plugins(),
           './app/js/lib/pikaday.min.js',
           './app/js/lib/handleCounter.js',
           './app/js/lib/select2.min.js',
-          './app/js/lib/bricks.js',
+          './app/js/lib/masonry.js',
         ],
       },
       images: {

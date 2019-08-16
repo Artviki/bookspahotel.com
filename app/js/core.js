@@ -4,10 +4,34 @@ $(document).ready(function() {
   // Welcome Console
   console.log('%cBookSpaHotel.com', 'color: #9aba22; font-size: 28px;');
 
+  const options = {
+    // options
+    itemSelector: '.masonry-grid-item',
+    columnWidth: 160,
+    gutter: 25,
+    horizontalOrder: true,
+  };
+  const masonry1 = new Masonry(document.querySelector('#location'), options);
+  const masonry2 = new Masonry(
+    document.querySelector('#medicalPortfolio'),
+    options
+  );
+
+  $('.book-spa-hotels').on('click', function() {
+    $('#location').toggleClass('opacity');
+  });
+
+  $('.select-tabs .btns').on('click', function() {
+    $('.btns.active').removeClass('active');
+    $(this).addClass('active');
+    // $('.dropdown-select').removeClass('active');
+    // $(`.dropdown-select.${$(this).data().type}`).addClass('active');
+  });
+
   // ScrollTop
   $('body').materialScrollTop();
   // Select2
-  $('.search-select').select2();
+  // $('.search-select').select2();
 
   // START -- Isotope Filtering
   const checkResults = (grid, div) => {
@@ -89,6 +113,10 @@ $(document).ready(function() {
 
   $('.feeding-type li').on('click', function() {
     $(`${feedingToggler} .text`).text($(this).text());
+    $(this)
+      .siblings()
+      .removeClass('active');
+    $(this).addClass('active');
     $('.feeding-type .dropdown').slideToggle();
   });
 
@@ -239,11 +267,4 @@ $(document).ready(function() {
     }
   });
   // END   -- Feeding Type Modal
-
-  $('.select-tabs .btns').on('click', function() {
-    $('.btns.active').removeClass('active');
-    $(this).addClass('active');
-    $('.search-select').removeClass('active');
-    $(`.search-select.${$(this).data().type}`).addClass('active');
-  });
 });

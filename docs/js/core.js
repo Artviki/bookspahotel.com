@@ -2,11 +2,28 @@
 
 $(document).ready(function () {
   // Welcome Console
-  console.log('%cBookSpaHotel.com', 'color: #9aba22; font-size: 28px;'); // ScrollTop
+  console.log('%cBookSpaHotel.com', 'color: #9aba22; font-size: 28px;');
+  var options = {
+    // options
+    itemSelector: '.masonry-grid-item',
+    columnWidth: 160,
+    gutter: 25,
+    horizontalOrder: true
+  };
+  var masonry1 = new Masonry(document.querySelector('#location'), options);
+  var masonry2 = new Masonry(document.querySelector('#medicalPortfolio'), options);
+  $('.book-spa-hotels').on('click', function () {
+    $('#location').toggleClass('opacity');
+  });
+  $('.select-tabs .btns').on('click', function () {
+    $('.btns.active').removeClass('active');
+    $(this).addClass('active'); // $('.dropdown-select').removeClass('active');
+    // $(`.dropdown-select.${$(this).data().type}`).addClass('active');
+  }); // ScrollTop
 
   $('body').materialScrollTop(); // Select2
-
-  $('.search-select').select2(); // START -- Isotope Filtering
+  // $('.search-select').select2();
+  // START -- Isotope Filtering
 
   var checkResults = function checkResults(grid, div) {
     var visibleItemsCount = grid.data('isotope').filteredItems.length;
@@ -62,6 +79,8 @@ $(document).ready(function () {
   });
   $('.feeding-type li').on('click', function () {
     $("".concat(feedingToggler, " .text")).text($(this).text());
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
     $('.feeding-type .dropdown').slideToggle();
   }); // START -- Number Of People Inputs
 
@@ -162,11 +181,4 @@ $(document).ready(function () {
       $('.children').append(inputGroup);
     }
   }); // END   -- Feeding Type Modal
-
-  $('.select-tabs .btns').on('click', function () {
-    $('.btns.active').removeClass('active');
-    $(this).addClass('active');
-    $('.search-select').removeClass('active');
-    $(".search-select.".concat($(this).data().type)).addClass('active');
-  });
 });

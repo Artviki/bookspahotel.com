@@ -33,5 +33,56 @@ body {
 	top: 422px !important;
 }
 
+.book-spa-hotels {
+	display: block;
+	font-size: $ftz-extra-small;
+	color: $gray-light;
+	cursor: pointer;
+	width: 200px;
+}
+
+.dropdown-select {
+	display: none;
+	opacity: 0;
+	background: #fff;
+	position: absolute !important;
+	padding: 0;
+	flex-wrap: wrap;
+	top: 65px;
+	left: 0;
+	width: 100%;
+	padding: 20px;
+	border-radius: 3px;
+	&.active {
+		display: flex;
+	}
+	&.opacity {
+		opacity: 1;
+	}
+	ul {
+		display: flex;
+		flex-direction: column;
+		width: 160px;
+		font-size: $ftz-extra-small;
+		font-weight: 300;
+		color: #848484;
+		margin-bottom: 20px;
+		padding-left: 0;
+		padding-bottom: 5px !important;
+		border-bottom: 1px solid #b4b4b471;
+		span {
+			cursor: default;
+			display: block;
+			padding: 0;
+			font-size: $ftz-extra-small;
+			color: $blue;
+			margin-bottom: 10px;
+		}
+		li {
+			list-style: none;
+		}
+	}
+}
+
 //  Pages
 @import 'index.scss';

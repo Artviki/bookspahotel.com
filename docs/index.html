@@ -117,7 +117,10 @@
   <section class="banner">
     <div class="container">
       <h1 class="banner-title">Лучшие санатории Европы и Азии</h1>
-      <form class="search-form" action="" method="">
+      <form class="search-form" action="" method="" autocomplete="off">
+        <input type="text" required hidden id="spaHotel" name="spaHotel" />
+        <input type="text" required hidden id="feedingType" name="feedingType" />
+        <input type="text" required hidden id="numberOfPeople" name="numberOfPeople" />
         <div class="select-tabs">
           <button type="button" class="btns location active" data-type="location">
             <i class="icon">
@@ -136,100 +139,190 @@
             <span>Поиск по медицинскому профилю</span>
           </button>
         </div>
-        <select hidden class=" search-select location active" data-type="location">
-          <option value="Выберите курорт или санаторий" disabled selected>Выберите курорт или санаторий</option>
-          <optgroup label="Курорты Азербайджана">
-            <option value="Нафталан">Нафталан</option>
-          </optgroup>
-          <optgroup label="Курорты Венгрии">
-            <option value="Будапешт">Будапешт</option>
-            <option value="Хайдусобосло">Хайдусобосло</option>
-            <option value="Шарвар">Шарвар</option>
-            <option value="Бюкфюрдо">Бюкфюрдо</option>
-            <option value="Хевиз">Хевиз</option>
-          </optgroup>
-          <optgroup label="Курорты Италии">
-            <option value="Абано Терме">Абано Терме</option>
-            <option value="Фьюджи">Фьюджи</option>
-            <option value="Монтекатини Терме">Монтекатини Терме</option>
-          </optgroup>
-          <optgroup label="Курорты Польши">
-            <option value="Поляница-Здруй">Поляница-Здруй</option>
-            <option value="Кудова-Здруй">Кудова-Здруй</option>
-            <option value="Сверадув-Здруй">Сверадув-Здруй</option>
-            <option value="Душники-Здруй">Душники-Здруй</option>
-            <option value="Цеплице-Здруй">Цеплице-Здруй</option>
-            <option value="Колобжег ">Колобжег </option>
-          </optgroup>
-          <optgroup label="Курорты Словении">
-            <option value="Порторож ">Порторож </option>
-            <option value="Терме Олимия">Терме Олимия</option>
-            <option value="Струньян ">Струньян </option>
-            <option value="Раденцы ">Раденцы </option>
-            <option value="Рогашка Слатина">Рогашка Слатина</option>
-          </optgroup>
-          <optgroup label="Курорты Чехии">
-            <option value="Карловы Вары">Карловы Вары</option>
-            <option value="Марианские Лазни">Марианские Лазни</option>
-            <option value="Яхимов ">Яхимов </option>
-            <option value="Теплице ">Теплице </option>
-            <option value="Подебрады ">Подебрады </option>
-            <option value="Франтишковы Лазни">Франтишковы Лазни</option>
-          </optgroup>
-          <optgroup label="Курорты Беларуси">
-            <option value="Беларусь">Беларусь</option>
-          </optgroup>
-          <optgroup label="Курорты Германии">
-            <option value="Абано Терме">Абано Терме</option>
-          </optgroup>
-          <optgroup label="Курорты Италии">
-            <option value="Абано Терме">Абано Терме</option>
-            <option value="Фьюджи">Фьюджи</option>
-            <option value="Монтекатини Терме">Монтекатини Терме</option>
-          </optgroup>
-          <optgroup label="Курорты Латвии">
-            <option value="Абано Терме">Абано Терме</option>
-            <option value="Фьюджи">Фьюджи</option>
-          </optgroup>
-          <optgroup label="Курорты Польши">
-            <option value="Абано Терме">Абано Терме</option>
-          </optgroup>
-        </select>
-        <select hidden class="search-select medical-portfolio" data-type="medical-portfolio">
-          <option value="Выберите курорт или санаторий" disabled selected>Выберите курорт или санаторий</option>
-          <optgroup label="Курорты Азербайджана">
-            <option value="Нафталан">Нафталан</option>
-          </optgroup>
-          <optgroup label="Курорты Венгрии">
-            <option value="Будапешт">Будапешт</option>
-            <option value="Хайдусобосло">Хайдусобосло</option>
-            <option value="Шарвар">Шарвар</option>
-            <option value="Бюкфюрдо">Бюкфюрдо</option>
-            <option value="Хевиз">Хевиз</option>
-          </optgroup>
-          <optgroup label="Курорты Италии">
-            <option value="Абано Терме">Абано Терме</option>
-            <option value="Фьюджи">Фьюджи</option>
-            <option value="Монтекатини Терме">Монтекатини Терме</option>
-          </optgroup>
-          <optgroup label="Курорты Польши">
-            <option value="Поляница-Здруй">Поляница-Здруй</option>
-            <option value="Кудова-Здруй">Кудова-Здруй</option>
-            <option value="Сверадув-Здруй">Сверадув-Здруй</option>
-            <option value="Душники-Здруй">Душники-Здруй</option>
-            <option value="Цеплице-Здруй">Цеплице-Здруй</option>
-            <option value="Колобжег ">Колобжег </option>
-          </optgroup>
-          <optgroup label="Курорты Словении">
-            <option value="Порторож ">Порторож </option>
-            <option value="Терме Олимия">Терме Олимия</option>
-            <option value="Струньян ">Струньян </option>
-            <option value="Раденцы ">Раденцы </option>
-            <option value="Рогашка Слатина">Рогашка Слатина</option>
-          </optgroup>
-        </select>
-        <input class="search-datapicker arrival" type="text" placeholder="Дата заезда" required />
-        <input class="search-datapicker departure" type="text" placeholder="Дата выезда" required />
+        <span class="book-spa-hotels">Выберите курорт или санаторий &#9662;</span>
+        <ul id="location" class="dropdown-select location masonry-grid active" data-type="location">
+          <ul class="masonry-grid-item">
+            <span>Курорты Азербайджана</span>
+            <li>Нафталан</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Венгрии</span>
+            <li>Будапешт</li>
+            <li>Хайдусобосло</li>
+            <li>Шарвар</li>
+            <li>Бюкфюрдо</li>
+            <li>Хевиз</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Италии</span>
+            <li>Абано Терме</li>
+            <li>Фьюджи</li>
+            <li>Монтекатини Терме</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Чехии</span>
+            <li>Карловы Вары</li>
+            <li>Марианские Лазни</li>
+            <li>Яхимов </li>
+            <li>Теплице </li>
+            <li>Подебрады </li>
+            <li>Франтишковы Лазни</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Италии</span>
+            <li>Абано Терме</li>
+            <li>Фьюджи</li>
+            <li>Монтекатини Терме</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Польши</span>
+            <li>Поляница-Здруй</li>
+            <li>Кудова-Здруй</li>
+            <li>Сверадув-Здруй</li>
+            <li>Душники-Здруй</li>
+            <li>Цеплице-Здруй</li>
+            <li>Колобжег </li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Словении</span>
+            <li>Порторож </li>
+            <li>Терме Олимия</li>
+            <li>Струньян </li>
+            <li>Раденцы </li>
+            <li>Рогашка Слатина</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Чехии</span>
+            <li>Карловы Вары</li>
+            <li>Марианские Лазни</li>
+            <li>Яхимов </li>
+            <li>Теплице </li>
+            <li>Подебрады </li>
+            <li>Франтишковы Лазни</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Беларуси</span>
+            <li>Беларусь</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Германии</span>
+            <li>Абано Терме</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Латвии</span>
+            <li>Абано Терме</li>
+            <li>Фьюджи</li>
+            <li>Монтекатини Терме</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Италии</span>
+            <li>Абано Терме</li>
+            <li>Фьюджи</li>
+            <li>Монтекатини Терме</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Чехии</span>
+            <li>Карловы Вары</li>
+            <li>Марианские Лазни</li>
+            <li>Яхимов </li>
+            <li>Теплице </li>
+            <li>Подебрады </li>
+            <li>Франтишковы Лазни</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Латвии</span>
+            <li>Абано Терме</li>
+            <li>Фьюджи</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Польши</span>
+            <li">Абано Терме</li">
+          </ul>
+        </ul>
+        <ul id="medicalPortfolio" class="dropdown-select medicalPortfolio masonry-grid" data-type="medicalPortfolio">
+          <ul class="masonry-grid-item">
+            <span>Курорты Азербайджана</span>
+            <li>Нафталан</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Венгрии</span>
+            <li>Будапешт</li>
+            <li>Хайдусобосло</li>
+            <li>Шарвар</li>
+            <li>Бюкфюрдо</li>
+            <li>Хевиз</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Италии</span>
+            <li>Абано Терме</li>
+            <li>Фьюджи</li>
+            <li>Монтекатини Терме</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Чехии</span>
+            <li>Карловы Вары</li>
+            <li>Марианские Лазни</li>
+            <li>Яхимов </li>
+            <li>Теплице </li>
+            <li>Подебрады </li>
+            <li>Франтишковы Лазни</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Беларуси</span>
+            <li>Беларусь</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Германии</span>
+            <li>Абано Терме</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Латвии</span>
+            <li>Абано Терме</li>
+            <li>Фьюджи</li>
+            <li>Монтекатини Терме</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Италии</span>
+            <li>Абано Терме</li>
+            <li>Фьюджи</li>
+            <li>Монтекатини Терме</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Чехии</span>
+            <li>Карловы Вары</li>
+            <li>Марианские Лазни</li>
+            <li>Яхимов </li>
+            <li>Теплице </li>
+            <li>Подебрады </li>
+            <li>Франтишковы Лазни</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Латвии</span>
+            <li>Абано Терме</li>
+            <li>Фьюджи</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Польши</span>
+            <li">Абано Терме</li">
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Италии</span>
+            <li>Абано Терме</li>
+            <li>Фьюджи</li>
+            <li>Монтекатини Терме</li>
+          </ul>
+          <ul class="masonry-grid-item">
+            <span>Курорты Чехии</span>
+            <li>Карловы Вары</li>
+            <li>Марианские Лазни</li>
+            <li>Яхимов </li>
+            <li>Теплице </li>
+            <li>Подебрады </li>
+            <li>Франтишковы Лазни</li>
+          </ul>
+        </ul>
+        <input type="text" required autocomplete="off" class="search-datapicker arrival" id="arrival" name="arrival" placeholder="Дата заезда" />
+        <input type="text" required autocomplete="off" class="search-datapicker departure" id="departure" name="departure" placeholder="Дата выезда" />
         <span class="search-modals feeding-type">
           <span class="toggler">
             <span class="text">3-х разовое питание с лечением</span> &#9662; </span>
@@ -243,7 +336,6 @@
           </div>
         </span>
         <span class="search-modals number-of-people">
-          <input hidden id="numberOfPeople" name="numberOfPeople" type="text" value="">
           <span class="toggler">
             <span class="default" style="display: none">Количество гостей</span>
             <span class="adult"><span class="sum">2</span> взрослых</span>

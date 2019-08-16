@@ -111,9 +111,9 @@
 					font-weight: 300;
 					color: #3f3337;
 					line-height: 1;
-					transition: 0.3 ease-in-out;
+					transition: color 0.3s ease-in-out;
+					text-decoration: underline;
 					&:hover {
-						text-decoration: underline;
 						color: $blue;
 					}
 					.icon {

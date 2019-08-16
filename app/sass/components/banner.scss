@@ -114,8 +114,7 @@
 						list-style: none;
 						padding: 8px 20px;
 						transition: 0.3s ease-in-out;
-						&.active,
-						&:hover {
+						&.active {
 							color: $white;
 							background-color: $green-secondary;
 						}
