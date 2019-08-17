@@ -12,18 +12,24 @@ $(document).ready(function () {
   };
   var masonry1 = new Masonry(document.querySelector('#location'), options);
   var masonry2 = new Masonry(document.querySelector('#medicalPortfolio'), options);
-  $('.book-spa-hotels').on('click', function () {
+  $('.book-spa-hotels.location').on('click', function () {
     $('#location').toggleClass('opacity');
+  });
+  $('body').on('click', function (e) {});
+  $('.book-spa-hotels.medicalPortfolio').on('click', function () {
+    $('#medicalPortfolio').toggleClass('opacity');
   });
   $('.select-tabs .btns').on('click', function () {
     $('.btns.active').removeClass('active');
-    $(this).addClass('active'); // $('.dropdown-select').removeClass('active');
-    // $(`.dropdown-select.${$(this).data().type}`).addClass('active');
+    $(this).addClass('active');
+    $('.dropdown-select').removeClass('opacity');
+    $('.book-spa-hotels').removeClass('active');
+    $(".book-spa-hotels.".concat($(this).data().type)).addClass('active');
   }); // ScrollTop
 
   $('body').materialScrollTop(); // Select2
-  // $('.search-select').select2();
-  // START -- Isotope Filtering
+
+  $('#age').select2(); // START -- Isotope Filtering
 
   var checkResults = function checkResults(grid, div) {
     var visibleItemsCount = grid.data('isotope').filteredItems.length;
@@ -127,7 +133,10 @@ $(document).ready(function () {
       if (parseInt(value) === 0) {
         childInput = true;
         showDefault(adultInput, childInput);
+        $("".concat(peopleToggler, " .child")).hide();
+        $('.age-select').hide();
       } else {
+        $('.age-select').show();
         childInput = false;
         showDefault(adultInput, childInput);
       }
